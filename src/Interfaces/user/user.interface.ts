@@ -2,7 +2,7 @@ export interface BaseUser {
     name: string;
     login: string;
     password: string;
-    situation: string;
+    situation: boolean;
 }
 
 export interface User extends BaseUser {

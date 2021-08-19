@@ -2,68 +2,53 @@
 // Data Model Interfaces
 import { BaseUser, User } from "./user.interface";
 import { Users } from "./users.interface";
+import { promises as fs } from 'fs';
 
 
-// In - Memory Store
-let users: Users = {
-    1: {
-        id: 1,
-        name: "Carlos Duarte",
-        login: "C.Duarte",
-        password: "Abcarlos*2808*",
-        situation: "Ativo"
-    },
-    2: {
-        id: 2,
-        name: "Abigail de Jesus",
-        login: "A.Jesus",
-        password: "biaGata",
-        situation: "Ativo"
-    },
-    3: {
-        id: 3,
-        name: "Macária Duarte",
-        login: "M.Duarte",
-        password: "123",
-        situation: "Inativo"
-    }
-};
+// In - get from json
+
+// let users = require('../../db/users.json');
+let users = '../../db/users.json';
+const { readFile, writeFile } = fs;
 
 
 // Service Methods
- export const findAll = async (): Promise<User[]> => Object.values(users);
+export const findAll = async (): Promise<User[]> => Object.values(users);
 
- export const find = async (id: number): Promise<User> => users[id];
+export const find = async (id: number): Promise<User> => users[id];
 
- export const create = async (newUser: BaseUser): Promise<User> => {
-     
-    const id = new Date().valueOf();
+export const create = async (newUser: BaseUser): Promise<any> => {
+    const user = newUser;
+    // const json = JSON.parse(await readFile(users, "utf-8"));
+    console.log(await readFile(users, "utf-8"));
 
-     users[id] = {
-         id,
-         ...newUser,
-     };
+    // const id = new Date().valueOf();
 
-     return users[id];
- }
+    // users[id] = {
+    //     id,
+    //     ...newUser,
+    // };
 
- export const update = async (id: number, userUpdate: BaseUser): Promise<User | null> => {
-     
+    // return users[id];
+}
+
+export const update = async (id: number, userUpdate: BaseUser): Promise<User | null> => {
+
     const user = await find(id);
 
-     if (!user) {
-         return null;
-     }
+    if (!user) {
+        return null;
+    }
 
-     users[id] = { 
-        id, 
+    users[id] = {
+        id,
         ...userUpdate
-     };
+    };
 
-     return users[id];
- }
+    return users[id];
+}
 
- export const remove = async (id: number): Promise<null | void> => {
+export const remove = async (id: number): Promise<null | void> => {
 
     const user = await find(id);
 
@@ -72,4 +57,4 @@ let users: Users = {
     }
 
     delete users[id];
- }
+}

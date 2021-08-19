@@ -1,0 +1,33 @@
+{
+    "nextId": 5,
+    "users": [
+        {
+            "id": 1,
+            "name": "Carlos Duarte",
+            "login": "C.Duarte",
+            "password": "Abcarlos*2808*",
+            "situation": true
+        },
+        {
+            "id": 2,
+            "name": "Abigail de Jesus",
+            "login": "A.Jesus",
+            "password": "biaGata",
+            "situation": true
+        },
+        {
+            "id": 3,
+            "name": "Macária Duarte",
+            "login": "M.Duarte",
+            "password": "123",
+            "situation": false
+        },
+        {
+            "id": 4,
+            "name": "Tiago Cardoso",
+            "login": "Tyago",
+            "password": "12356",
+            "situation": true
+        }
+    ]
+}

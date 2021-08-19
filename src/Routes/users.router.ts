@@ -1,5 +1,5 @@
 // Required External Modules and Interfaces
-import express,{ Request, Response } from "express";
+import express, { Request, Response } from "express";
 import * as UserService from '../Interfaces/user/users.service';
 import { BaseUser, User } from "../Interfaces/user/user.interface";
 
