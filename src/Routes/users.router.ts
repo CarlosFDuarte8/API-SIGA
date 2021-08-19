@@ -46,7 +46,7 @@ usersRouter.post("/", async (req: Request, res: Response) => {
     try {
         const user: BaseUser = req.body;
 
-        const newUser = await UserService.create(user);
+        const newUser: User | unknown = await UserService.create(user);
 
         res.status(201).json(newUser);
     } catch (e) {

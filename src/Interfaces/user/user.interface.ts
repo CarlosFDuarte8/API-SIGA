@@ -6,5 +6,10 @@ export interface BaseUser {
 }
 
 export interface User extends BaseUser {
-    id: number;
+    id?: number;
+}
+
+export interface JsonProps {
+  nextId: number;
+  users: User[];
 }
