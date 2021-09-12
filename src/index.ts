@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import {Routers, ItemRouters }from "./Routes";
+import {Routers, ItemRouters, Menus }from "./Routes";
 import { errorHandler} from "./Middleware/error.middleware";
 import { notFoundHandler} from "./Middleware/not-found.middleware";
 // import { itemsRouter } from "./Routes/items.routes";
@@ -26,6 +26,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/menu/items", ItemRouters);
 app.use("/api/user/users", Routers);
+app.use("/api/menu/menus", Menus);
 
 app.use(errorHandler);
 app.use(notFoundHandler);
