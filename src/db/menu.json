@@ -1,0 +1,29 @@
+{
+  "nextId": 4,
+  "menus": [
+    {
+      "id": 1,
+      "icon": "cash-multiple",
+      "title": "Tesouraria",
+      "path": "Login",
+      "subTitle1": "Oferta",
+      "subTitle2": "Depósito"
+    },
+    {
+      "id": 2,
+      "icon": "account-group",
+      "title": "Voluntário",
+      "path": "Login",
+      "subTitle1": "Apontamentos",
+      "subTitle2": "Cadastro"
+    },
+    {
+      "id": 3,
+      "icon": "package-variant",
+      "title": "Produtos/Matérias",
+      "path": "Login",
+      "subTitle1": "Fundo Bíblico",
+      "subTitle2": "Relatórios"
+    }
+  ]
+}
